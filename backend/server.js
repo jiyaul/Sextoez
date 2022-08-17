@@ -2,8 +2,6 @@ const app = require("./app");
 const connectDatabase = require("./config/database");
 const cloudinary = require("cloudinary");
 const PORT = process.env.PORT || 5000;
-const express = require("express");
-const path = require("path");
 
 // UncaughtException Error
 process.on("uncaughtException", (err) => {
@@ -30,4 +28,3 @@ process.on("unhandledRejection", (err) => {
     process.exit(1);
   });
 });
-app.use(express.static(path.join(__dirname, "frontend/build")));
